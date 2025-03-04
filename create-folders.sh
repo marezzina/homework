@@ -7,9 +7,9 @@ generate_unique_name() {
 
 echo "Enter the path where you want to create the folders:"
 read path
-if [ -d $path ]; then
-    mkdir -p generated_folders
-    cd generated_folders
+if [ ! -d $path ]; then
+    mkdir -p $path
+    cd $path
     # Generate a random number of folders between 9 and 11
     num_folders=$((RANDOM % 3 + 9))
 
